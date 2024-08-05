@@ -8,7 +8,7 @@ Car API предоставляет интерфейс для управлени�
 
 ### 1. Клонирование репозитория
 ```sh
-git clone https://github.com/vanisus/it_solution.git
+git clone https://github.com/Vanisus/it_solution.git
 cd it_solution
 ```
 
