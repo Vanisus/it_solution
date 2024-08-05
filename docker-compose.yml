@@ -1,0 +1,31 @@
+services:
+  car_service:
+    build: ./car_service
+    ports:
+      - 5008:5008
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - "54322:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: car_service
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
